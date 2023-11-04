@@ -42,6 +42,22 @@ enter 2 list of 512 space integer values which are coefficients of 2 polynomials
 - 4th output is inverse NTT performed on pointwise multiplication output list 
 
 
+# Explanation 
 
+n = 512 , q = 12289, r = 10968 
 
+is initialized at the starting of the code.
 
+There  are 3 functions :
+
+- ntt : function that will take the input in Rq and will convert the input into its corresponding NTT transformation using radix-2 Cooley-Tukey method.
+
+- pointwise_multiplication : A function that will take the two inputs which are already transformed by NTT and will produce their point wise multiplication
+
+- intt : function that will take the inputs in NTT transformed domain and will perform inverse NTT using the radix-2 Gentleman-Sande method
+
+There are 4  other helper functions :
+- modExponent
+- modInv
+- bitReverse
+- orderReverse
